@@ -1,0 +1,141 @@
+The following notes are available on Notion
+
+
+What is an OS?	
+
+The operating system is a software that manages everything that goes on in the computer.
+It reads, writes, and deletes files from the hard drive.
+It handles how the processes start, how they interact with each other, and how they eventually finish.
+It manages how memory gets allocated different processes, how network packets are sent and received, and how each programming can access the different hardware components.
+
+The OS has two parts :
+
+1) Kernel : Which deals directly with the hardware and manage system resources
+2) User Space : User Interface and Systems Programs
+
+Python 
+
+```bash
+#To check the version of python installed
+ python --version
+```
+
+  
+
+Python Standard Library : This is a library with basic modules that come packaged with python installation.
+
+PyPI (Python Package Index) : External Library with open source modules that can be imported and used in our scripts.
+
+pip : Module package manager that is used to import external modules.
+
+Installing Python External Library using pip
+
+```powershell
+pip install <module_name>
+```
+
+Compiled vs Interpreted Programming Language
+
+Compiled Programming Languages convert the source code into an intermediate code called the machine code or byte code. The byte code is specific to the OS it is running on.
+
+Eg C, C++,GO, Rust .
+
+Interpreted Programming Language have a piece of program called the interpreter which executes the source code instruction on the system. Hence the same source code can be run on different OS since it is interpreted.
+
+Eg Python, Ruby, JavaScript, Bash, PowerShell.
+
+Programming Language like Java and C# is a combination of both the compiled and interpreted language. The source code is compiled into a byte code and then the byte code is interpreted by a platform specific Interpreter. 
+
+    
+
+Steps to run a Python script on Linux.
+
+1. Create a file with the Python script and save it with the .py extension. Eg . hello_world.py
+    
+    ```python
+    print("Hello, World!!!")
+    ```
+    
+2. The script can be now run with as below
+    
+    ```bash
+    python3 hello_world.py
+    ```
+    
+3. Specifying python3 every time the code is executed can be tedious hence we can make the code and executable by adding the following line in the script.
+    
+    ```python
+    #!/usr/bin/env python3
+    print("Hello, World!!!")
+    ```
+    
+4. Furthermore necessary execute permission need to be given to the python script file before execution.
+    
+    ```bash
+    chmod +x hello_world.py
+    ./hello_world.py
+    ```
+    
+
+Python Modules!!
+
+Python Modules are collection of function, classes and sometimes other sub-modules. Modules facilitate the concept of code re-use. 
+
+The contents of a module in the python script are accessed using the dot operator (.).
+
+Incase a module is a directory having sub-modules. The directory should have a **__init__.py** file to indicate that the directory is a module with sub-modules.
+
+Benefits of Automation
+
+Automation in IT can be a workforce multiplier.  Automation implemented system makes it more scalable. It reduces the human workforce needed to perform the task hence reduces the chances of having human errors in the picture.
+
+Automation also Centralizes Mistakes. A error in the automation when corrected, removes that particular error from the system once and for all.  
+
+Pitfalls of Automation
+
+All tasks are not feasible for automation. Sometimes the task itself takes less time to be completed than the time taken to automate the system.
+
+We can consider automating a system if the following condition is satisfied
+
+<aside>
+👉 [time_to_automate < (time_to_perform * amount_of_times_done)]
+
+</aside>
+
+However if the time taken to automate the system is really long than it may so happen that the task requirement might have been changed.
+
+<aside>
+👉 Pareto Principle
+
+20% of System Administration tasks contribute to 80% of the total work done by the Sys Admin.
+If the task falling in this 20% are identified and deemed fit for automation. The Sys Admin could be saving a lot of time.
+
+</aside>
+
+There are several reasons how an automated system can do more harm than good.
+
+- If underlying systems change and the automation isn't updated accordingly, workflows can break.
+    
+    <aside>
+    👉 *Imagine an automated backup system that periodically saves the contents of a sales database. Let's say the automatic backup program uses a disk identifier like /dev/sda1 to know where the data to be saved is stored. What happens if the new disk is added to the server and disk identifier changes to /dev/sdb1. The automation will no longer be able to access this it thinks it should be backing up and it will fail. This process of software falling out of step with the environment is sometimes called Bit-rot. The actual bits and script don't really decay it's the assumptions about the impulses signals the script relies on that rot.*
+    
+    </aside>
+    
+- Since automation removes human intervention. We could maybe forget about keeping a check on the automation. Hence an alert system should be implemented in the automation to notify when things go wrong.
+    
+    <aside>
+    👉 *Sometime later, the sales database server crashes and the data needs to be restored. The IT specialist will be in for a nasty surprise when they discover that the automated system hasn't backed up in a while.*
+    
+    </aside>
+    
+- A case where the automation success but performance the wrong data.
+    
+    <aside>
+    👉 *To build on our earlier example, what if the backup system was correctly performing its task but was configured to backup the wrong data? A restore of the incorrect sales data could lead to data loss or even data corruption where customers might be charged the incorrect amount or billed for products they hadn't even purchased, oops. Sometimes a task completes, but it completes incorrectly.*
+    
+    </aside>
+    
+
+The pitfalls of automation can be avoided by setting up alert systems, having periodic tests to check automation status and also by logging.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1535d35e-5f98-4cb0-8286-357f8a543c29/Untitled.png)
